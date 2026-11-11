@@ -28,7 +28,7 @@ app:
     secret: ${JWT_SECRET:SaanviSareesSuperSecretKeyForJwtTokenGenerationAndValidation2026SecureKey!}
     expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24 hours
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,https://saanvi-sarees.vercel.app}
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,https://averawears.com,https://www.averawears.com,https://avera-sarees.vercel.app}
   admin:
     initial-email: ${INITIAL_ADMIN_EMAIL:admin@saanvisarees.com}
     initial-password: ${INITIAL_ADMIN_PASSWORD:Admin@Saanvi2026!}
