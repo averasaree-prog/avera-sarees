@@ -21,7 +21,9 @@ USER avera:avera
 # Copy built JAR
 COPY --from=build --chown=avera:avera /app/target/saree-store-backend-1.0.0.jar app.jar
 
+ENV SPRING_PROFILES_ACTIVE=prod
 ENV PORT=8080
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]
+
