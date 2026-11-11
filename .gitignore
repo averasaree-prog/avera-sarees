@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production builds
+dist/
+build/
+target/
+*.jar
+*.war
+
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.local
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Spring Boot logs & H2 DB
+*.log
+h2db/
+.mvn/.develocity/

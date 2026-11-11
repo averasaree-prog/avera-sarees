@@ -1,0 +1,53 @@
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  application:
+    name: saanvi-sarees-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+  # Multipart file upload configuration for high-res saree photos
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB
+      max-request-size: 35MB
+
+  # Jackson date/time formatting
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+# Custom application configuration properties
+app:
+  jwt:
+    secret: ${JWT_SECRET:SaanviSareesSuperSecretKeyForJwtTokenGenerationAndValidation2026SecureKey!}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24 hours
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000,https://saanvi-sarees.vercel.app}
+  admin:
+    initial-email: ${INITIAL_ADMIN_EMAIL:admin@saanvisarees.com}
+    initial-password: ${INITIAL_ADMIN_PASSWORD:Admin@Saanvi2026!}
+    initial-name: ${INITIAL_ADMIN_NAME:Saanvi Admin}
+  razorpay:
+    key-id: ${RAZORPAY_KEY_ID:rzp_test_TuBfUzNgofP5sI}
+    key-secret: ${RAZORPAY_KEY_SECRET:xbItgizQCa8gnk8IvLedJwE5}
+    webhook-secret: ${RAZORPAY_WEBHOOK_SECRET:whsec_saanvi_test}
+  shipping:
+    free-shipping-threshold: 2999.00
+    standard-shipping-rate: 150.00
+    cod-available: true
+    cod-extra-charge: 50.00
+
+# OpenAPI documentation config
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method

@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #F9F6F0;
+    color: #302820;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+    color: #302820;
+  }
+}
+
+/* Luxury scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8D5BC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #800020;
+}
+
+/* Custom brand gradients and patterns */
+.bg-avera-maroon {
+  background-color: #800020;
+}
+
+.text-avera-sand {
+  color: #E8D5BC;
+}
+
+.border-avera-heading {
+  border-color: #302820;
+}
+
+.bg-festival-gradient {
+  background: linear-gradient(90deg, #6B001B 0%, #800020 30%, #A24B1B 70%, #B8731F 100%);
+}
+
+/* Diagonal ribbon banner for product cards */
+.ribbon-tag {
+  position: absolute;
+  top: 14px;
+  left: -28px;
+  transform: rotate(-45deg);
+  width: 100px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 3px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Ornate decorative divider */
+.ornate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.ornate-divider::before,
+.ornate-divider::after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, #302820, transparent);
+}
